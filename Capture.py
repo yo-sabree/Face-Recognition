@@ -9,11 +9,11 @@ os.makedirs(f"dataset/{name}", exist_ok=True)
 count = 0
 start_time = time.time()
 
-while count < 50:
+while count < 150:
     ret, frame = camera.read()
     if not ret:
         break
-    if time.time() - start_time >= 1:
+    if time.time() - start_time >= 0.5:
         cv2.imwrite(f"dataset/{name}/{name}_{count+1}.jpg", frame)
         count += 1
         start_time = time.time()
